@@ -1,0 +1,65 @@
+plus_icon($size, $plusWidth = 2px, $color = #fff)
+  width: $size;
+  height: $size;
+  color: $color;
+  transition: color .25s;
+  position: relative;
+  &::after
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: $size;
+    margin-left: -($plusWidth/ 2);
+    margin-top: -(0.5 *$size);
+    border-left: $plusWidth solid;
+  &::before
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: $size;
+    margin-left: -(0.5 *$size);
+    margin-top: -($plusWidth/ 2);
+    border-top: $plusWidth solid;
+
+/**
+  $size:整个视图的宽度
+  $cicle_size: 环的宽度
+  $tri_size: 齿轮的宽度
+  $Hcolor:环/齿轮的颜色
+  $Icolor:内圆的颜色
+ */
+gear_icon($size, $cicle_size, $tri_size, $Hcolor = #000, $Icolor = #fff)
+  width: $size;
+  height: $size;
+  box-shadow: 0 0 0 $cicle_size $Hcolor inset, 0px 0px 0px $cicle_size $Icolor inset;
+  margin: $size auto;
+  position: relative;
+  border-radius: 50%;
+  &::after
+    content: "";
+    display: block;
+    width: $tri_size;
+    height: $tri_size;
+    position: absolute;
+    border-radius: $tri_size / 5;
+    box-shadow: (($size/2) - ($tri_size/2)) (-0.8*$tri_size) 0 black, (($size/2) - ($tri_size/2)) ($size - ($tri_size/5)) 0 black, (-0.8*$tri_size)  (($size/2) - ($tri_size/2)) 0 black, ($size -($tri_size / 5)) (($size/2) - ($tri_size/2)) 0 black;
+    -webkit-box-shadow: (($size/2) - ($tri_size/2)) (-0.8*$tri_size) 0 black, (($size/2) - ($tri_size/2)) ($size - ($tri_size/5)) 0 black, (-0.8*$tri_size)  (($size/2) - ($tri_size/2)) 0 black, ($size -($tri_size / 5)) (($size/2) - ($tri_size/2)) 0 black;
+    -moz-box-shadow: (($size/2) - ($tri_size/2)) (-0.8*$tri_size) 0 black, (($size/2) - ($tri_size/2)) ($size - ($tri_size/5)) 0 black, (-0.8*$tri_size)  (($size/2) - ($tri_size/2)) 0 black, ($size -($tri_size / 5)) (($size/2) - ($tri_size/2)) 0 black;
+  &::before
+    content: "";
+    display: block;
+    width: $tri_size;
+    height: $tri_size;
+    position: absolute;
+    border-radius: $tri_size/ 5;
+    -moz-box-shadow: (($size/2) - ($tri_size/2)) (-0.8*$tri_size) 0 black, (($size/2) - ($tri_size/2)) ($size - ($tri_size/5)) 0 black, (-0.8*$tri_size)  (($size/2) - ($tri_size/2)) 0 black, ($size -($tri_size / 5)) (($size/2) - ($tri_size/2)) 0 black;
+    -webkit-box-shadow: (($size/2) - ($tri_size/2)) (-0.8*$tri_size) 0 black, (($size/2) - ($tri_size/2)) ($size - ($tri_size/5)) 0 black, (-0.8*$tri_size)  (($size/2) - ($tri_size/2)) 0 black, ($size -($tri_size / 5)) (($size/2) - ($tri_size/2)) 0 black;
+    box-shadow: (($size/2) - ($tri_size/2)) (-0.8*$tri_size) 0 black, (($size/2) - ($tri_size/2)) ($size - ($tri_size/5)) 0 black, (-0.8*$tri_size)  (($size/2) - ($tri_size/2)) 0 black, ($size -($tri_size / 5)) (($size/2) - ($tri_size/2)) 0 black;
+    transform-origin: ($size/2) ($size/2)
+    webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg)
